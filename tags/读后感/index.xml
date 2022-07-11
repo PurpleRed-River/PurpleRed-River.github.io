@@ -1,9 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>读后感 - Tag - 度绛河</title>
+        <title>读后感 - 标签 - 度绛河</title>
         <link>https://purplered-river.github.io/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
-        <description>读后感 - Tag - 度绛河</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 10 Jul 2022 19:38:48 &#43;0800</lastBuildDate><atom:link href="https://purplered-river.github.io/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" rel="self" type="application/rss+xml" /><item>
+        <description>读后感 - 标签 - 度绛河</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dujianghe0@gmail.com (度绛河)</managingEditor>
+            <webMaster>dujianghe0@gmail.com (度绛河)</webMaster><lastBuildDate>Sun, 10 Jul 2022 19:38:48 &#43;0800</lastBuildDate><atom:link href="https://purplered-river.github.io/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/" rel="self" type="application/rss+xml" /><item>
     <title>2022年的开始</title>
     <link>https://purplered-river.github.io/posts/20220710/</link>
     <pubDate>Sun, 10 Jul 2022 19:38:48 &#43;0800</pubDate>
