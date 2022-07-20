@@ -28,7 +28,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/purplered-river.github.io\/posts\/2022071801\/"
-        },"genre": "posts","keywords": "Docker, 学习","wordcount":  2029 ,
+        },"genre": "posts","keywords": "Docker, 学习","wordcount":  2311 ,
         "url": "https:\/\/purplered-river.github.io\/posts\/2022071801\/","datePublished": "2022-07-18T08:00:00+08:00","dateModified": "2022-07-18T08:00:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -103,7 +103,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Docker 笔记（一）</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>度绛河</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%AC%94%E8%AE%B0/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>笔记</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-18">2022-07-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2029 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-18">2022-07-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2311 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -159,7 +159,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> apt-get update <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="o">&amp;&amp;</span> apt-get purge -y --auto-remove <span class="nv">$buildDeps</span><span class="err">
 </span></span></span></code></pre></div><h5 id="commit-与-build-构建命令">commit 与 build 构建命令</h5>
-<p>命令 <code>docker commit [选项] &lt;容器ID或容器名&gt; [&lt;仓库名&gt;[:&lt;标签&gt;]]</code> 用来</p>
+<p>命令 <code>docker commit [选项] &lt;容器ID或容器名&gt; [&lt;仓库名&gt;[:&lt;标签&gt;]]</code> 用来生成黑箱镜像，也就是将容器的存储层保存下来成为镜像，但这种方法只适用于入侵后保存现场等特殊情况，因为他不像使用 Dockerfile 文件进行构建，容器内执行过什么命令进行过什么操作没有直观记录，而且容器内的修改调试，有大量重复臃肿的内容，通过 commit 构建之后，不仅大小会大很多，而且因为具体操作不清晰，对后期的维护十分不便。</p>
+<p>命令 <code>docker build [选项] &lt;上下文路径/URL/-&gt;</code> 可以使用 Dockerfile 文件来构建镜像， 最后的上下文路径要注意，为相对路径，一般来说，把需要构建入镜像的文件放到 Dockerfile 所在目录，用 <code>.</code> 表示为当前目录。<code>docker build</code> 还支持从 URL 构建，比如通过 Git repo、压缩包等。</p>
 <h3 id="容器container">容器（Container）</h3>
 <p>在 Docker 中，镜像与容器的关系，镜像是静态的定义，容器是镜像运行时的实体。容器的实质是进程，这里有一个新的名词“命名空间”。在容器进程运行时属于自己的独立的命名空间。</p>
 <blockquote>
@@ -169,6 +170,7 @@
 <blockquote>
 <p>数据卷 (Volume) 的生存周期独立于容器，容器消亡，数据卷不会消亡。</p>
 </blockquote>
+<h4 id="容器的启动-运行-终止">容器的启动-运行-终止</h4>
 <h3 id="仓库repository">仓库（Repository）</h3>
 <p>Docker Registry 是一个集中存储、分发镜像的服务。一个 Docker Registry 中可以包含多个仓库 (Repository)；每个仓库有多个标签 (Tag)；每个标签对应一个镜像。通过格式 &lt;仓库名&gt;:&lt;标签&gt; 来指定具体这个软件的那个版本的镜像。latest 为默认标签。</p>
 <p>有官方和第三方提供的免费或者收费相关服务，也可以通过 Docker 官方提供的镜像，在本地搭建私有 Docker Registry。</p>
