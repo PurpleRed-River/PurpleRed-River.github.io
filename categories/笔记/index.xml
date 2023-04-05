@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>笔记 - 分类 - 度绛河</title>
+    <link>https://purplered-river.github.io/categories/%E7%AC%94%E8%AE%B0/</link>
+    <description>笔记 - 分类 - 度绛河</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dujianghe0@gmail.com (度绛河)</managingEditor>
+      <webMaster>dujianghe0@gmail.com (度绛河)</webMaster><lastBuildDate>Mon, 18 Jul 2022 08:00:00 &#43;0800</lastBuildDate><atom:link href="https://purplered-river.github.io/categories/%E7%AC%94%E8%AE%B0/" rel="self" type="application/rss+xml" /><item>
+  <title>Docker 笔记（一）</title>
+  <link>https://purplered-river.github.io/2022071801/</link>
+  <pubDate>Mon, 18 Jul 2022 08:00:00 &#43;0800</pubDate>
+  <author>度绛河</author>
+  <guid>https://purplered-river.github.io/2022071801/</guid>
+  <description><![CDATA[前言 我对于docker一直有断断续续的使用，但仅限于用 docker hub 寻找漏洞环境，简单的拉取和使用，搭起来博客之后，想来多少应该写点什么，正好在学校“]]></description>
+</item>
+</channel>
+</rss>
