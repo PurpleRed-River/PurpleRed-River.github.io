@@ -16,5 +16,5 @@ Blog 由 [Hugo](https://gohugo.io/) 强力驱动 | 主题 - [FixIt](https://gith
 ---
 
 > 作者: 度绛河  
-> URL: https://PurpleRed-River.github.io/about/  
+> URL: https://purplered-river.github.io/about/  
 
