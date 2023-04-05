@@ -12,5 +12,5 @@
 ---
 
 > 作者: 度绛河  
-> URL: /first_post/  
+> URL: https://PurpleRed-River.github.io/first_post/  
 

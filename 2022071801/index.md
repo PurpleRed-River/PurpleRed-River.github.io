@@ -99,5 +99,5 @@ Docker Registry 是一个集中存储、分发镜像的服务。一个 Docker Re
 ---
 
 > 作者: 度绛河  
-> URL: /2022071801/  
+> URL: https://PurpleRed-River.github.io/2022071801/  
 
