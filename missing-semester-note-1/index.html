@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>计算机教育中缺失的一课 笔记一 - 度绛河</title><meta name="author" content="度绛河">
+<meta name="author-link" content="">
+<meta name="description" content="前言 2020 MIT公开课:The Missing Semester of Your CS Education(计算机教育中缺失的一课) 官方 github 仓库:https://github.com/missi" /><meta name="keywords" content='学习' /><meta itemprop="name" content="计算机教育中缺失的一课 笔记一">
+<meta itemprop="description" content="前言 2020 MIT公开课:The Missing Semester of Your CS Education(计算机教育中缺失的一课) 官方 github 仓库:https://github.com/missi"><meta itemprop="datePublished" content="2023-07-04T20:04:57+08:00" />
+<meta itemprop="dateModified" content="2023-07-04T20:04:57+08:00" />
+<meta itemprop="wordCount" content="7599"><meta itemprop="image" content="https://purplered-river.github.io/logo.png"/>
+<meta itemprop="keywords" content="学习," /><meta property="og:title" content="计算机教育中缺失的一课 笔记一" />
+<meta property="og:description" content="前言 2020 MIT公开课:The Missing Semester of Your CS Education(计算机教育中缺失的一课) 官方 github 仓库:https://github.com/missi" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://purplered-river.github.io/missing-semester-note-1/" /><meta property="og:image" content="https://purplered-river.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-07-04T20:04:57+08:00" />
+<meta property="article:modified_time" content="2023-07-04T20:04:57+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://purplered-river.github.io/logo.png"/>
+
+<meta name="twitter:title" content="计算机教育中缺失的一课 笔记一"/>
+<meta name="twitter:description" content="前言 2020 MIT公开课:The Missing Semester of Your CS Education(计算机教育中缺失的一课) 官方 github 仓库:https://github.com/missi"/>
+<meta name="application-name" content="PurpleRed-River">
+<meta name="apple-mobile-web-app-title" content="PurpleRed-River"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://purplered-river.github.io/missing-semester-note-1/" /><link rel="prev" href="https://purplered-river.github.io/mi9%E5%88%B7%E6%9C%BA%E6%8C%87%E5%8C%97/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "计算机教育中缺失的一课 笔记一",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/purplered-river.github.io\/missing-semester-note-1\/"
+    },"genre": "posts","keywords": "学习","wordcount":  7599 ,
+    "url": "https:\/\/purplered-river.github.io\/missing-semester-note-1\/","datePublished": "2023-07-04T20:04:57+08:00","dateModified": "2023-07-04T20:04:57+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "度绛河"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="narrow"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="度绛河"><img loading="lazy" src="https://raw.githubusercontent.com/PurpleRed-River/My-PicGo/main/img/Blog/headerlogo.svg" srcset="https://raw.githubusercontent.com/PurpleRed-River/My-PicGo/main/img/Blog/headerlogo.svg, https://raw.githubusercontent.com/PurpleRed-River/My-PicGo/main/img/Blog/headerlogo.svg 1.5x, https://raw.githubusercontent.com/PurpleRed-River/My-PicGo/main/img/Blog/headerlogo.svg 2x" sizes="auto" data-title="度绛河" data-alt="度绛河" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/><span class="header-title-text">度绛河</span></a><span id="typeit-header-subtitle-desktop" class="typeit header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 归档</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                title="关于我"
+                
+              ><i class="fa-solid fa-info fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="= &#39;含  !反 ^前缀 !^反前  $后 !&#43;$反后 |OR" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="度绛河"><img loading="lazy" src="https://raw.githubusercontent.com/PurpleRed-River/My-PicGo/main/img/Blog/headerlogo.svg" srcset="https://raw.githubusercontent.com/PurpleRed-River/My-PicGo/main/img/Blog/headerlogo.svg, https://raw.githubusercontent.com/PurpleRed-River/My-PicGo/main/img/Blog/headerlogo.svg 1.5x, https://raw.githubusercontent.com/PurpleRed-River/My-PicGo/main/img/Blog/headerlogo.svg 2x" sizes="auto" data-title="https://raw.githubusercontent.com/PurpleRed-River/My-PicGo/main/img/Blog/headerlogo.svg" data-alt="https://raw.githubusercontent.com/PurpleRed-River/My-PicGo/main/img/Blog/headerlogo.svg" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const a of ['style','data-title','data-alt','onerror','onload']){this.removeAttribute(a);}"/><span class="header-title-text">度绛河</span></a><span id="typeit-header-subtitle-mobile" class="typeit header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="= &#39;含  !反 ^前缀 !^反前  $后 !&#43;$反后 |OR" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 归档</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  title="关于我"
+                  
+                ><i class="fa-solid fa-info fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>计算机教育中缺失的一课 笔记一</span>
+      </h1><p class="single-subtitle animate__animated animate__fadeIn">The Missing Semester of Your CS Education Note 1</p></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      度绛河</span></span>
+          <span class="post-category">收录于 <a href="/categories/%E7%AC%94%E8%AE%B0/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 笔记</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2023-07-04 20:04:57"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-04">2023-07-04</time></span>&nbsp;<span title="更新于 2023-07-04 20:04:57"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-07-04">2023-07-04</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 7599 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 16 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#命令行基本工具">命令行基本工具</a>
+      <ul>
+        <li>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#shellcheckhttpsgithubcomkoalamanshellcheck-定位shbash脚本中的错误"><a href="https://github.com/koalaman/shellcheck">shellcheck</a> 定位sh/bash脚本中的错误。</a></li>
+                <li><a href="#tldr-pageshttpstldrsh-它提供了一些命令案例帮助快速找到正确的选项"><a href="https://tldr.sh/">TLDR pages</a> 它提供了一些命令案例，帮助快速找到正确的选项。</a></li>
+                <li><a href="#findhttpsman7orglinuxman-pagesman1find1html-它是-shell-上用于查找文件的绝佳工具"><a href="https://man7.org/linux/man-pages/man1/find.1.html">find</a> 它是 shell 上用于查找文件的绝佳工具。</a></li>
+                <li><a href="#fdhttpsgithubcomsharkdpfd-就是一个更简单更快速更友好的查找程序它可以用来作为find的替代品输出着色默认支持正则匹配支持unicode并且我认为它的语法更符合直觉"><a href="https://github.com/sharkdp/fd">fd</a> 就是一个更简单、更快速、更友好的查找程序，它可以用来作为find的替代品。输出着色、默认支持正则匹配、支持unicode并且我认为它的语法更符合直觉。</a></li>
+                <li><a href="#locatehttpsman7orglinuxman-pagesman1locate1html-使用一个由-updatedb负责更新的数据库通过编译索引或建立数据库的方式来实现更加快速地搜索在大多数系统中-updatedb-都会通过-cron-每日更新find-和类似的工具可以通过别的属性比如文件大小修改时间或是权限来查找文件locate则只能通过文件名"><a href="https://man7.org/linux/man-pages/man1/locate.1.html">locate</a> 使用一个由 updatedb负责更新的数据库，通过编译索引或建立数据库的方式来实现更加快速地搜索。在大多数系统中 updatedb 都会通过 cron 每日更新。find 和类似的工具可以通过别的属性比如文件大小、修改时间或是权限来查找文件，locate则只能通过文件名。</a></li>
+                <li><a href="#grep-有很多选项这也使它成为一个非常全能的工具其中经常使用的有--c-获取查找结果的上下文context-v-将对结果进行反选invert也就是输出不匹配的结果举例来说-grep--c-5-会输出匹配结果前后五行当需要搜索大量文件的时候使用--r-会递归地进入子目录并搜索所有的文本文件">grep 有很多选项，这也使它成为一个非常全能的工具。其中经常使用的有 -C ：获取查找结果的上下文（Context）；-v 将对结果进行反选（Invert），也就是输出不匹配的结果。举例来说， grep -C 5 会输出匹配结果前后五行。当需要搜索大量文件的时候，使用 -R 会递归地进入子目录并搜索所有的文本文件。</a></li>
+                <li><a href="#ackhttpsbeyondgrepcom-aghttpsgithubcomggreerthe_silver_searcher-和-rghttpsgithubcomburntsushiripgrep-都是-grep-的替代品比较常用的是-ripgrep-rg-速度快而且用法符合直觉"><a href="https://beyondgrep.com/">ack</a>, <a href="https://github.com/ggreer/the_silver_searcher">ag</a> 和 <a href="https://github.com/BurntSushi/ripgrep">rg</a> 都是 grep 的替代品，比较常用的是 ripgrep (rg) ，速度快，而且用法符合直觉。</a></li>
+                <li><a href="#history-命令允许您以程序员的方式来访问shell中输入的历史命令">history 命令允许您以程序员的方式来访问shell中输入的历史命令。</a></li>
+                <li><a href="#fzf-是一个通用对模糊查找工具它可以和很多命令一起使用">fzf 是一个通用对模糊查找工具，它可以和很多命令一起使用。</a></li>
+                <li><a href="#fasdhttpsgithubcomclvvfasd和-autojumphttpsgithubcomwtingautojump-这两个工具来查找最常用或最近使用的文件和目录"><a href="https://github.com/clvv/fasd">fasd</a>和 <a href="https://github.com/wting/autojump">autojump</a> 这两个工具来查找最常用或最近使用的文件和目录。</a></li>
+              </ul>
+            </li>
+            <li><a href="#xargshttpswwwrunoobcomlinuxlinux-comm-xargshtml"><a href="https://www.runoob.com/linux/linux-comm-xargs.html">xargs</a></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#数据分析相关工具">数据分析相关工具</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#less-文件分页器">less 文件分页器</a></li>
+            <li><a href="#sed-流编辑器">sed 流编辑器</a></li>
+            <li><a href="#正则表达式regex">正则表达式（RegEX）</a>
+              <ul>
+                <li><a href="#正则表达式在线调试工具regex-debuggerhttpsregex101com"><a href="https://regex101.com/">正则表达式在线调试工具regex debugger</a></a></li>
+                <li><a href="#regexp-example-正则实例大全httpswangchujiangcomregexp-example"><a href="https://wangchujiang.com/regexp-example/">RegExp Example 正则实例大全</a></a></li>
+                <li><a href="#regex-备忘清单httpswangchujiangcomreferencedocsregexhtml"><a href="https://wangchujiang.com/reference/docs/regex.html">RegEX 备忘清单</a></a></li>
+              </ul>
+            </li>
+            <li><a href="#awk-用于文本处理的编程语言">awk 用于文本处理的编程语言</a></li>
+            <li><a href="#sort-数据排序httpswwwrunoobcomlinuxlinux-comm-sorthtmluniq-次数统计httpswwwrunoobcomlinuxlinux-comm-uniqhtmlhead-查看开头httpswwwrunoobcomlinuxlinux-comm-headhtmltail-查看内容httpswwwrunoobcomlinuxlinux-comm-tailhtmlpaste-合并列httpswwwrunoobcomlinuxlinux-comm-pastehtmlbc-计算器httpswwwrunoobcomlinuxlinux-comm-bchtml"><a href="https://www.runoob.com/linux/linux-comm-sort.html">sort 数据排序</a>、<a href="https://www.runoob.com/linux/linux-comm-uniq.html">uniq 次数统计</a>、<a href="https://www.runoob.com/linux/linux-comm-head.html">head 查看开头</a>、<a href="https://www.runoob.com/linux/linux-comm-tail.html">tail 查看内容</a>、<a href="https://www.runoob.com/linux/linux-comm-paste.html">paste 合并列</a>、<a href="https://www.runoob.com/linux/linux-comm-bc.html">bc 计算器</a></a></li>
+            <li><a href="#r语言">R语言</a></li>
+            <li><a href="#gnuplot-二维曲线绘图工具">gnuplot 二维曲线绘图工具</a></li>
+            <li><a href="#整理二进制数据">整理二进制数据</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#vim-的哲学多模态编辑">Vim 的哲学——多模态编辑</a></li>
+    <li><a href="#vim-命令">Vim 命令</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#命令行模式">命令行模式</a></li>
+            <li><a href="#移动">移动</a></li>
+            <li><a href="#编辑">编辑</a></li>
+            <li><a href="#可视化模式下的选择">可视化模式下的选择</a></li>
+            <li><a href="#计数使用">计数使用</a></li>
+            <li><a href="#使用修饰语">使用修饰语</a></li>
+            <li><a href="#进阶操作搜索与替换">进阶操作：搜索与替换</a></li>
+            <li><a href="#进阶操作多窗口">进阶操作：多窗口</a></li>
+            <li><a href="#进阶操作宏">进阶操作：宏</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#配置文件与扩展插件">配置文件与扩展插件</a>
+      <ul>
+        <li><a href="#自定义你的-vim--从配置文件开始">自定义你的 Vim —— 从配置文件开始</a></li>
+        <li><a href="#扩展你的-vim--插件的使用">扩展你的 Vim —— 插件的使用</a></li>
+        <li><a href="#万物皆可-vim--其他程式的-vim-模式">万物皆可 Vim —— 其他程式的 Vim 模式</a>
+          <ul>
+            <li><a href="#shell">Shell</a></li>
+            <li><a href="#浏览器">浏览器</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#扩展资料">扩展资料</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content" data-end-flag="-  73 -"><h1 id="前言">前言</h1>
+<p>2020 MIT公开课:The Missing Semester of Your CS Education(计算机教育中缺失的一课)</p>
+<blockquote>
+<p>官方 github 仓库:https://github.com/missing-semester/missing-semester</p>
+<p>2020 讲义:https://missing.csail.mit.edu/</p>
+<p>2020 中文讲义:https://missing-semester-cn.github.io/</p>
+<p>2019 讲义:https://missing.csail.mit.edu/2019/</p>
+</blockquote>
+<p>感谢课程制作者和 <a href="https://space.bilibili.com/518734451"target="_blank" rel="external nofollow noopener noreferrer">刘黑黑a</a> 的翻译上传。</p>
+<p>我的笔记基本是课程内容和讲义的二次整理，方便自己查看。</p>
+<h1 id="shell-工具和脚本">Shell 工具和脚本</h1>
+<p>Shell 基于<strong>空格</strong>分割命令并进行解析。如果传递的参数中包含空格，使用单引号，双引号，或使用<strong>转义符号 <strong><code>\</code></strong> <strong>。
+在 Shell 中执行 <code>date</code> 或 <code>echo</code> 时，Shell 通过</strong>环境变量</strong>来找到程序并执行。也就是说 Shell 是一个编程环境，它实际具备变量、条件、循环和函数等。</p>
+<blockquote>
+<p>Shell 查看环境变量 <code>echo $PATH</code>。
+查看程序路径 <code>which echo</code>。</p>
+</blockquote>
+<p>Shell 中的路径是一组被分割的目录，在 Linux 和 macOS 上使用 / 分割，而在Windows上是 \。</p>
+<blockquote>
+<p><code>pwd</code> 获取当前目录路径。
+<code>cd</code> 切换目录，<code>.</code> 当前目录， <code>..</code> 上级目录。</p>
+</blockquote>
+<blockquote>
+<p><code>ls</code> 打印当前目录下的文件
+<code>mv</code> 用于重命名或移动文件
+<code>cp</code> 拷贝文件
+<code>mkdir</code> 新建文件夹</p>
+</blockquote>
+<p>在 Shell 中，程序有两个主要的“流”：它们的输入流和输出流。
+最简单的重定向是 <code>&lt;</code> 和 <code>&gt;</code>。还可以使用 <code>&gt;&gt;</code> 来向一个文件追加内容，使用管道 <code>|</code> 操作符，我们能够更好的利用文件重定向。
+在 Bash 中为变量赋值的语法是 <code>foo=bar</code>，访问变量中存储的数值，其语法为 <code>$foo</code>。
+Bash 中的字符串通过 <code>'</code> 和 <code>&quot;</code> 分隔符来定义，但是它们的含义并不相同。</p>
+<blockquote>
+<p><code>'</code> 定义的字符串为原义字符串，其中的<strong>变量不会被转义</strong>
+<code>&quot;</code> 定义的字符串会将变量值进行替换。</p>
+</blockquote>
+<p>Bash 支持 <code>if</code>, <code>case</code>, <code>while</code> 和 <code>for</code> 这些控制流关键字。
+Bash 支持<strong>函数</strong>，它可以接受参数并基于参数进行操作。与其他脚本语言不同的是，bash使用了很多特殊的变量来表示参数、错误代码和相关变量。下面是列举来其中一些变量，更完整的列表可以参考 <a href="https://www.tldp.org/LDP/abs/html/special-chars.html"target="_blank" rel="external nofollow noopener noreferrer">高级 Bash 脚本编写指南：第三章特殊字符</a>。</p>
+<blockquote>
+<p><code>$0</code> - 脚本名
+<code>$1</code> 到 <code>$9</code> - 脚本的参数。 <code>$1</code> 是第一个参数，依此类推。
+<code>$@</code> - 所有参数
+<code>$#</code> - 参数个数
+<code>$?</code> - 前一个命令的返回值
+<code>$$</code> - 当前脚本的进程识别码
+<code>!!</code> - 完整的上一条命令，包括参数。常见应用：当你因为权限不足执行命令失败时，可以使用 sudo !!再尝试一次。
+<code>$_</code> - 上一条命令的最后一个参数。如果你正在使用的是交互式 shell，你可以通过按下 Esc 之后键入 . 来获取这个值。</p>
+</blockquote>
+<p>命令通常使用 <code>STDOUT</code> 来返回<strong>输出值</strong>，使用 <code>STDERR</code> 来返回错误及<strong>错误码</strong>。 返回码或退出状态是脚本/命令之间交流执行状态的方式。返回值0表示正常执行，其他所有非0的返回值都表示有错误发生。
+退出码可以搭配 <code>&amp;&amp;</code>（与操作符）和 <code>||</code>（或操作符）使用，用来进行条件判断，决定是否执行其他程序。同一行的多个命令可以用 <code>;</code> 分隔。程序 <code>true</code> 的返回码永远是 <code>0</code>，<code>false</code> 的返回码永远是 <code>1</code>。
+另一个常见的模式是以变量的形式获取一个命令的输出，这可以通过<strong>命令替换</strong>（command substitution）实现。 <code>$(CMD)</code> 这样的方式来执行CMD 这个命令时，它的输出结果会替换掉 <code>$(CMD)</code>。
+在 <code>Bash</code> 中进行比较时，尽量使用双方括号 <code>[[ ]]</code> 而不是单方括号 <code>[ ]</code></p>
+<blockquote>
+<p>通配符 - 当你想要利用通配符进行匹配时，你可以分别使用 <code>?</code> 和 <code>*</code> 来匹配<strong>一个</strong>或<strong>任意个字符</strong>。
+花括号 <code>{}</code> - 当你有一系列的指令，其中包含一段公共子串时，可以用花括号来自动展开这些命令。</p>
+</blockquote>
+<p>shell函数和脚本有如下一些不同点：</p>
+<blockquote>
+<p>函数只能与shell使用相同的语言，脚本可以使用任意语言。因此在脚本中包含 shebang 是很重要的。
+函数仅在定义时被加载，脚本会在每次被执行时加载。这让函数的加载比脚本略快一些，但每次修改函数定义，都要重新加载一次。
+函数会在当前的shell环境中执行，脚本会在单独的进程中执行。因此，函数可以对环境变量进行更改，比如改变当前工作目录，脚本则不行。脚本需要使用 export 将环境变量导出，并将值传递给环境变量。
+与其他程序语言一样，函数可以提高代码模块性、代码复用性并创建清晰性的结构。shell脚本中往往也会包含它们自己的函数定义。</p>
+</blockquote>
+<h2 id="命令行基本工具">命令行基本工具</h2>
+<h5 id="shellcheckhttpsgithubcomkoalamanshellcheck-定位shbash脚本中的错误"><a href="https://github.com/koalaman/shellcheck"target="_blank" rel="external nofollow noopener noreferrer">shellcheck</a> 定位sh/bash脚本中的错误。</h5>
+<h5 id="tldr-pageshttpstldrsh-它提供了一些命令案例帮助快速找到正确的选项"><a href="https://tldr.sh/"target="_blank" rel="external nofollow noopener noreferrer">TLDR pages</a> 它提供了一些命令案例，帮助快速找到正确的选项。</h5>
+<h5 id="findhttpsman7orglinuxman-pagesman1find1html-它是-shell-上用于查找文件的绝佳工具"><a href="https://man7.org/linux/man-pages/man1/find.1.html"target="_blank" rel="external nofollow noopener noreferrer">find</a> 它是 shell 上用于查找文件的绝佳工具。</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查找所有名称为src的文件夹</span>
+</span></span><span class="line"><span class="cl">find . -name src -type d
+</span></span><span class="line"><span class="cl"><span class="c1"># 查找所有文件夹路径中包含test的python文件</span>
+</span></span><span class="line"><span class="cl">find . -path <span class="s1">&#39;*/test/*.py&#39;</span> -type f
+</span></span><span class="line"><span class="cl"><span class="c1"># 查找前一天修改的所有文件</span>
+</span></span><span class="line"><span class="cl">find . -mtime -1
+</span></span><span class="line"><span class="cl"><span class="c1"># 查找所有大小在500k至10M的tar.gz文件</span>
+</span></span><span class="line"><span class="cl">find . -size +500k -size -10M -name <span class="s1">&#39;*.tar.gz&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除全部扩展名为.tmp 的文件</span>
+</span></span><span class="line"><span class="cl">find . -name <span class="s1">&#39;*.tmp&#39;</span> -exec rm <span class="o">{}</span> <span class="se">\;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 查找全部的 PNG 文件并将其转换为 JPG</span>
+</span></span><span class="line"><span class="cl">find . -name <span class="s1">&#39;*.png&#39;</span> -exec convert <span class="o">{}</span> <span class="o">{}</span>.jpg <span class="se">\;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="fdhttpsgithubcomsharkdpfd-就是一个更简单更快速更友好的查找程序它可以用来作为find的替代品输出着色默认支持正则匹配支持unicode并且我认为它的语法更符合直觉"><a href="https://github.com/sharkdp/fd"target="_blank" rel="external nofollow noopener noreferrer">fd</a> 就是一个更简单、更快速、更友好的查找程序，它可以用来作为find的替代品。输出着色、默认支持正则匹配、支持unicode并且我认为它的语法更符合直觉。</h5>
+<h5 id="locatehttpsman7orglinuxman-pagesman1locate1html-使用一个由-updatedb负责更新的数据库通过编译索引或建立数据库的方式来实现更加快速地搜索在大多数系统中-updatedb-都会通过-cron-每日更新find-和类似的工具可以通过别的属性比如文件大小修改时间或是权限来查找文件locate则只能通过文件名"><a href="https://man7.org/linux/man-pages/man1/locate.1.html"target="_blank" rel="external nofollow noopener noreferrer">locate</a> 使用一个由 updatedb负责更新的数据库，通过编译索引或建立数据库的方式来实现更加快速地搜索。在大多数系统中 updatedb 都会通过 cron 每日更新。find 和类似的工具可以通过别的属性比如文件大小、修改时间或是权限来查找文件，locate则只能通过文件名。</h5>
+<h5 id="grep-有很多选项这也使它成为一个非常全能的工具其中经常使用的有--c-获取查找结果的上下文context-v-将对结果进行反选invert也就是输出不匹配的结果举例来说-grep--c-5-会输出匹配结果前后五行当需要搜索大量文件的时候使用--r-会递归地进入子目录并搜索所有的文本文件">grep 有很多选项，这也使它成为一个非常全能的工具。其中经常使用的有 -C ：获取查找结果的上下文（Context）；-v 将对结果进行反选（Invert），也就是输出不匹配的结果。举例来说， grep -C 5 会输出匹配结果前后五行。当需要搜索大量文件的时候，使用 -R 会递归地进入子目录并搜索所有的文本文件。</h5>
+<h5 id="ackhttpsbeyondgrepcom-aghttpsgithubcomggreerthe_silver_searcher-和-rghttpsgithubcomburntsushiripgrep-都是-grep-的替代品比较常用的是-ripgrep-rg-速度快而且用法符合直觉"><a href="https://beyondgrep.com/"target="_blank" rel="external nofollow noopener noreferrer">ack</a>, <a href="https://github.com/ggreer/the_silver_searcher"target="_blank" rel="external nofollow noopener noreferrer">ag</a> 和 <a href="https://github.com/BurntSushi/ripgrep"target="_blank" rel="external nofollow noopener noreferrer">rg</a> 都是 grep 的替代品，比较常用的是 ripgrep (rg) ，速度快，而且用法符合直觉。</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查找所有使用了 requests 库的文件</span>
+</span></span><span class="line"><span class="cl">rg -t py <span class="s1">&#39;import requests&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 查找所有没有写 shebang 的文件（包含隐藏文件）</span>
+</span></span><span class="line"><span class="cl">rg -u --files-without-match <span class="s2">&#34;^#!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 查找所有的foo字符串，并打印其之后的5行</span>
+</span></span><span class="line"><span class="cl">rg foo -A <span class="m">5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 打印匹配的统计信息（匹配的行和文件的数量）</span>
+</span></span><span class="line"><span class="cl">rg --stats PATTERN
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="history-命令允许您以程序员的方式来访问shell中输入的历史命令">history 命令允许您以程序员的方式来访问shell中输入的历史命令。</h5>
+<p>对于大多数的 Shell 来说，您可以使用 <code>Ctrl+R</code> 对命令历史记录进行回溯搜索。敲 <code>Ctrl+R</code> 后您可以输入子串来进行匹配，查找历史命令行。zsh 支持直接方向键上、下，同时 zsh 还支持基于历史的自动补全，非常方便。</p>
+<blockquote>
+<p>你可以修改 shell history 的行为，例如，如果在命令的开头加上一个空格，它就不会被加进 Shell 记录中。当你输入包含密码或是其他敏感信息的命令时会用到这一特性。 为此你需要在 <code>.bashrc</code> 中添加 <code>HISTCONTROL=ignorespace</code> 或者向 <code>.zshrc</code> 添加 <code>setopt HIST_IGNORE_SPACE</code>。 如果你不小心忘了在前面加空格，可以通过编辑。<code>bash_history</code> 或 <code>.zhistory</code> 来手动地从历史记录中移除那一项。</p>
+</blockquote>
+<h5 id="fzf-是一个通用对模糊查找工具它可以和很多命令一起使用">fzf 是一个通用对模糊查找工具，它可以和很多命令一起使用。</h5>
+<h5 id="fasdhttpsgithubcomclvvfasd和-autojumphttpsgithubcomwtingautojump-这两个工具来查找最常用或最近使用的文件和目录"><a href="https://github.com/clvv/fasd"target="_blank" rel="external nofollow noopener noreferrer">fasd</a>和 <a href="https://github.com/wting/autojump"target="_blank" rel="external nofollow noopener noreferrer">autojump</a> 这两个工具来查找最常用或最近使用的文件和目录。</h5>
+<p>Fasd 基于 frecency 对文件和文件排序，也就是说它会同时针对频率（frequency）和时效（recency）进行排序。默认情况下，fasd使用命令 z 帮助我们快速切换到最常访问的目录。
+还有一些更复杂的工具可以用来概览目录结构，例如 <a href="https://linux.die.net/man/1/tree"target="_blank" rel="external nofollow noopener noreferrer">tree</a>, <a href="https://github.com/Canop/broot"target="_blank" rel="external nofollow noopener noreferrer">broot</a> 或更加完整的文件管理器，例如 <a href="https://github.com/jarun/nnn"target="_blank" rel="external nofollow noopener noreferrer">nnn</a> 或 <a href="https://github.com/ranger/ranger"target="_blank" rel="external nofollow noopener noreferrer">ranger</a>。</p>
+<h4 id="xargshttpswwwrunoobcomlinuxlinux-comm-xargshtml"><a href="https://www.runoob.com/linux/linux-comm-xargs.html"target="_blank" rel="external nofollow noopener noreferrer">xargs</a></h4>
+<p>命令传递参数的一个过滤器，也是组合多个命令的一个工具。它能够捕获一个命令的输出，然后传递给另外一个命令。有时候您要利用数据整理技术从一长串列表里找出你所需要安装或移除的东西。我们之前讨论的相关技术配合 xargs 即可实现。之所以能用到这个命令，关键是由于很多命令不支持|管道来传递参数，而日常工作中有有这个必要，所以就有了 xargs 命令。
+命令格式 <code>somecommand |xargs -item  command</code></p>
+<h2 id="数据分析相关工具">数据分析相关工具</h2>
+<h4 id="less-文件分页器">less 文件分页器</h4>
+<p><code>less</code> 为我们创建来一个文件分页器，使我们可以通过翻页的方式浏览较长的文本。</p>
+<h4 id="sed-流编辑器">sed 流编辑器</h4>
+<p><code>sed</code> 是一个基于文本编辑器 ed 构建的”流编辑器” 。在 <code>sed</code> 中，可以利用一些简短的命令来修改文件，而不是直接操作文件的内容。最常用的是 <code>s</code> 替换命令。<code>sed</code> 可以搭配其他命令，完成一些数据的处理。例如 <code>cat server.log | grep sshd | grep &quot;Disconnected from&quot; | sed 's/.*Disconnected from //'</code> 通过 <code>grep</code> 过滤最后使用 <code>sed</code> 匹配正则表达式完成了一次输出。
+<code>sed</code> 还可以做很多各种各样有趣的事情，例如文本注入：(使用 <code>i</code> 命令)，打印特定的行 (使用 <code>p</code> 命令)，基于索引选择特定行等等。
+关于 <code>sed</code> 的更多使用，可以通过 <a href="https://wangchujiang.com/reference/docs/sed.html"target="_blank" rel="external nofollow noopener noreferrer">Sed 备忘清单</a> 了解。</p>
+<h4 id="正则表达式regex">正则表达式（RegEX）</h4>
+<p>正则表达式非常常见也非常有用，值得您花些时间去理解它。</p>
+<blockquote>
+<p><code>.</code> 除换行符之外的”任意单个字符”
+<code>*</code> 匹配前面字符零次或多次
+<code>+</code> 匹配前面字符一次或多次
+<code>[abc]</code> 匹配 a, b 和 c 中的任意一个
+<code>(RX1|RX2)</code> 任何能够匹配RX1 或 RX2的结果
+<code>^</code> 行首
+<code>$</code> 行尾</p>
+</blockquote>
+<p><code>sed</code> 使用正则表达式有些时候是比较奇怪的，它需要你在这些模式前添加 <code>\</code> 才能使其具有特殊含义。或者，您也可以添加 <code>-E</code> 选项来支持这些匹配。
+正则表达式是出了名的难以写对，但是它仍然会是您强大的常备工具之一。我在此不准备写更多关于正则表达式的用例。下面列出来一些非常有用的网站。</p>
+<h5 id="正则表达式在线调试工具regex-debuggerhttpsregex101com"><a href="https://regex101.com/"target="_blank" rel="external nofollow noopener noreferrer">正则表达式在线调试工具regex debugger</a></h5>
+<h5 id="regexp-example-正则实例大全httpswangchujiangcomregexp-example"><a href="https://wangchujiang.com/regexp-example/"target="_blank" rel="external nofollow noopener noreferrer">RegExp Example 正则实例大全</a></h5>
+<h5 id="regex-备忘清单httpswangchujiangcomreferencedocsregexhtml"><a href="https://wangchujiang.com/reference/docs/regex.html"target="_blank" rel="external nofollow noopener noreferrer">RegEX 备忘清单</a></h5>
+<h4 id="awk-用于文本处理的编程语言">awk 用于文本处理的编程语言</h4>
+<blockquote>
+<p>Awk、sed与grep，俗称Linux下的三剑客，它们之间有很多相似点，但是同样也各有各的特色，相似的地方是它们都可以匹配文本，其中sed和awk还可以用于文本编辑，而grep则不具备这个功用。sed是一种非交互式且面向字符流的编辑器（a &ldquo;non-interactive&rdquo; stream-oriented editor），而awk则是一门模式匹配的编程语言，因为它的主要功能是用于匹配文本并处理，同时它有一些编程语言才有的语法，例如函数、分支循环语句、变量等等，当然比起我们常见的编程语言，Awk相对比较简单。</p>
+</blockquote>
+<p>语法 <code>awk [选项参数] 'script' var=value file(s)</code> 或 <code>awk [选项参数] -f scriptfile var=value file(s)</code>，例子：每行按空格或TAB分割，输出文本中的1、4项 <code>awk '{print $1,$4}' log.txt</code>。
+在代码块中，<code>$0</code> 表示整行的内容，<code>$1</code> 到 <code>$n</code> 为一行中的 n 个区域，区域的分割基于 awk 的域分隔符（默认是空格，可以通过 <code>-F</code> 来修改）。
+更多内容可以看 <a href="https://www.runoob.com/linux/linux-comm-awk.html"target="_blank" rel="external nofollow noopener noreferrer">菜鸟教程</a> 和 <a href="https://wangchujiang.com/reference/docs/awk.html"target="_blank" rel="external nofollow noopener noreferrer">Awk 备忘清单</a>。</p>
+<h4 id="sort-数据排序httpswwwrunoobcomlinuxlinux-comm-sorthtmluniq-次数统计httpswwwrunoobcomlinuxlinux-comm-uniqhtmlhead-查看开头httpswwwrunoobcomlinuxlinux-comm-headhtmltail-查看内容httpswwwrunoobcomlinuxlinux-comm-tailhtmlpaste-合并列httpswwwrunoobcomlinuxlinux-comm-pastehtmlbc-计算器httpswwwrunoobcomlinuxlinux-comm-bchtml"><a href="https://www.runoob.com/linux/linux-comm-sort.html"target="_blank" rel="external nofollow noopener noreferrer">sort 数据排序</a>、<a href="https://www.runoob.com/linux/linux-comm-uniq.html"target="_blank" rel="external nofollow noopener noreferrer">uniq 次数统计</a>、<a href="https://www.runoob.com/linux/linux-comm-head.html"target="_blank" rel="external nofollow noopener noreferrer">head 查看开头</a>、<a href="https://www.runoob.com/linux/linux-comm-tail.html"target="_blank" rel="external nofollow noopener noreferrer">tail 查看内容</a>、<a href="https://www.runoob.com/linux/linux-comm-paste.html"target="_blank" rel="external nofollow noopener noreferrer">paste 合并列</a>、<a href="https://www.runoob.com/linux/linux-comm-bc.html"target="_blank" rel="external nofollow noopener noreferrer">bc 计算器</a></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh myserver journalctl
+</span></span><span class="line"><span class="cl"> <span class="p">|</span> grep sshd <span class="c1"># 筛选</span>
+</span></span><span class="line"><span class="cl"> <span class="p">|</span> grep <span class="s2">&#34;Disconnected from&#34;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">|</span> sed -E <span class="s1">&#39;s/.*Disconnected from (invalid |authenticating )?user (.*) [^ ]+ port [0-9]+( \[preauth\])?$/\2/&#39;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">|</span> sort <span class="p">|</span> uniq -c 
+</span></span><span class="line"><span class="cl"> <span class="c1"># sort 会对其输入数据进行排序。</span>
+</span></span><span class="line"><span class="cl"> <span class="c1"># uniq -c 会把连续出现的行折叠为一行并使用出现次数作为前缀。</span>
+</span></span><span class="line"><span class="cl"> <span class="c1"># 这句最终是按照出现次数排序，过滤出最常出现的用户名</span>
+</span></span><span class="line"><span class="cl"> <span class="p">|</span> sort -nk1,1 <span class="p">|</span> tail -n10
+</span></span><span class="line"><span class="cl"> <span class="c1"># sort -n 会按照数字顺序对输入进行排序</span>
+</span></span><span class="line"><span class="cl"> <span class="c1"># 默认情况下是按照字典序排序 -k1,1 则表示“仅基于以空格分割的第一列进行排序”</span>
+</span></span><span class="line"><span class="cl"> <span class="c1"># n 部分表示“仅排序到第n个部分”，默认情况是到行尾。</span>
+</span></span><span class="line"><span class="cl"> <span class="c1"># tail -n10 表示从尾部显示十行，也就是次数多的</span>
+</span></span><span class="line"><span class="cl"> <span class="p">|</span> awk <span class="s1">&#39;{print $2}&#39;</span> <span class="p">|</span> paste -sd,
+</span></span><span class="line"><span class="cl"> <span class="c1"># awk 对于每一行文本，打印其第二个部分，也就是用户名。</span>
+</span></span><span class="line"><span class="cl"> <span class="c1"># paste 以 &#39;,&#39; 分隔，将用户名放到一行</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="p">|</span> paste -sd+ <span class="p">|</span> bc -l
+</span></span><span class="line"><span class="cl"><span class="c1"># paste 将一列数字用 &#39;+&#39; 分隔放到一行，然后 bc 执行</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="r语言">R语言</h4>
+<p>R 也是一种编程语言，它非常适合被用来进行<strong>数据分析</strong>和<strong>绘制图表</strong>。这里我们不会讲的特别详细， 您只需要知道summary 可以打印某个向量的统计结果。我们将输入的一系列数据存放在一个向量后，利用R语言就可以得到我们想要的统计数据。</p>
+<h4 id="gnuplot-二维曲线绘图工具">gnuplot 二维曲线绘图工具</h4>
+<h4 id="整理二进制数据">整理二进制数据</h4>
+<p>虽然到目前为止我们的讨论都是基于文本数据，但对于二进制文件其实同样有用。例如我们可以用 ffmpeg 从相机中捕获一张图片，将其转换成灰度图后通过SSH将压缩后的文件发送到远端服务器，并在那里解压、存档并显示。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ffmpeg -loglevel panic -i /dev/video0 -frames <span class="m">1</span> -f image2 -
+</span></span><span class="line"><span class="cl"> <span class="p">|</span> convert - -colorspace gray -
+</span></span><span class="line"><span class="cl"> <span class="p">|</span> gzip
+</span></span><span class="line"><span class="cl"> <span class="p">|</span> ssh mymachine <span class="s1">&#39;gzip -d | tee copy.jpg | env DISPLAY=:0 feh -&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="编辑器vim">编辑器（Vim）</h1>
+<p>写作和写代码其实是两项非常不同的活动。当我们编程的时候，会经常在文件间进行切换、阅读、浏览和修改代码，而不是连续编写一大段的文字。因此代码编辑器和文本编辑器是很不同的两种工具。</p>
+<h2 id="vim-的哲学多模态编辑">Vim 的哲学——多模态编辑</h2>
+<p>多模态编辑，插入文字、操纵文字有不同模式，<strong>Vim 接口本身就是一种程序语言可以进行编程，键入操作（以及他们的助记名） 本身是命令，这些命令可以组合使用。这使得移动和编辑更加高效。</strong>
+Vim 会维护一系列打开的文件，称为**“缓存”<strong>。一个 Vim 会话包含一系列</strong>标签页**，每个标签页包含 一系列<strong>窗口（分隔面板）</strong>。每个窗口显示一个缓存。但值得注意的是，“缓存”和“窗口”之间不是对应关系，窗口只是其中一个视角，我们可以打开多个窗口显示同一个缓存。</p>
+<table>
+<thead>
+<tr>
+<th><strong>模式</strong></th>
+<th><strong>作用</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>正常模式（默认）</strong></td>
+<td>在文件中四处移动光标进行修改</td>
+<td><code>&lt;ESC&gt;</code> 回到正常模式</td>
+</tr>
+<tr>
+<td><strong>插入模式</strong></td>
+<td>插入文本</td>
+<td><code>i</code> 进入</td>
+</tr>
+<tr>
+<td><strong>替换模式</strong></td>
+<td>替换文本</td>
+<td><code>R</code> 进入</td>
+</tr>
+<tr>
+<td><strong>可视化模式（一般，行，块）</strong></td>
+<td>选中文本块</td>
+<td><code>v</code> 一般、<code>V</code> 行、<code>&lt;C-v&gt;</code> 块</td>
+</tr>
+<tr>
+<td><strong>命令模式</strong></td>
+<td>用于执行命令</td>
+<td><code>:</code> 进入</td>
+</tr>
+</tbody>
+</table>
+<p>在不同模式下，按键的含义也不同，一般当前的模式会显示在左下角。</p>
+<h2 id="vim-命令">Vim 命令</h2>
+<p>除了以下课程上提到的操作之外我推荐 <a href="https://wangchujiang.com/reference/docs/vim.html"target="_blank" rel="external nofollow noopener noreferrer"><strong>Vim 备忘清单</strong></a></p>
+<h4 id="命令行模式">命令行模式</h4>
+<blockquote>
+<p><code>:q</code> 		退出（关闭窗口）
+<code>:w</code> 		保存（写）
+<code>:wq</code> 		保存然后退出
+<code>:e {文件名}</code> 	打开要编辑的文件
+<code>:ls</code> 		显示打开的缓存
+<code>:help {标题}</code> 	打开帮助文档
+<code>:help :w</code> 	打开 <code>:w</code> 命令的帮助文档
+<code>:help w</code> 	打开 <code>w</code> 移动的帮助文档</p>
+</blockquote>
+<h4 id="移动">移动</h4>
+<blockquote>
+<p>**基本移动： *<em><code>h``j``k``l</code> （左， 下， 上， 右）
+<strong>词：</strong> <code>w</code> （下一个词）， <code>b</code> （词初）， <code>e</code> （词尾）
+<strong>行：</strong> <code>0</code> （行初）， <code>^</code> （第一个非空格字符）， <code>$</code> （行尾）
+<strong>屏幕：</strong> <code>H</code> （屏幕首行）， <code>M</code> （屏幕中间）， <code>L</code> （屏幕底部）
+<strong>翻页：</strong> <code>Ctrl-u</code> （上翻）， <code>Ctrl-d</code> （下翻）
+<strong>文件：</strong> <code>gg</code> （文件头）， <code>G</code> （文件尾）
+<strong>行数：</strong> <code>:{行数}&lt;CR&gt;</code> 或者 <code>{行数}G</code> ({行数}为行数)
+<strong>杂项：</strong> <code>%</code> （找到配对，比如括号或者 /</em> */ 之类的注释对）
+<strong>查找：</strong> <code>f{字符}</code>， <code>t{字符}</code>， <code>F{字符}</code>， <code>T{字符}</code> 查找/到 向前/向后 在本行的{字符}</p>
+<ul>
+<li><code>,</code>/<code>;</code> 用于导航匹配</li>
+</ul>
+<p>**搜索: **<code>/{正则表达式}</code>, <code>n</code>/<code>N</code> 用于导航匹配</p>
+</blockquote>
+<h4 id="编辑">编辑</h4>
+<blockquote>
+<p><code>i</code> 进入插入模式
+<code>O</code>/<code>o</code> 在之上/之下插入行
+<code>d{移动命令}</code> 删除 {移动命令}</p>
+<ul>
+<li>例如，<code>dw</code> 删除词, <code>d$</code> 删除到行尾, <code>d0</code> 删除到行头。</li>
+</ul>
+<p><code>c{移动命令}</code> 改变 {移动命令}</p>
+<ul>
+<li>例如，<code>cw</code> 改变词</li>
+<li>比如 <code>d{移动命令}</code> 再 <code>i</code></li>
+</ul>
+<p><code>x</code> 删除字符（等同于 <code>dl</code>）
+<code>s</code> 替换字符（等同于 <code>xi</code>）
+可视化模式 + 操作</p>
+<ul>
+<li>选中文字, <code>d</code> 删除 或者 <code>c</code> 改变</li>
+</ul>
+<p><code>u</code> 撤销, <code>&lt;C-r&gt;</code> 重做
+<code>y</code> 复制 / “yank” （其他一些命令比如 <code>d</code> 也会复制）
+<code>p</code> 粘贴
+<code>~</code> 改变字符的大小写</p>
+</blockquote>
+<h4 id="可视化模式下的选择">可视化模式下的选择</h4>
+<blockquote>
+<p>可视化：<code>v</code>
+可视化行：<code>V</code>
+可视化块：<code>Ctrl+v</code></p>
+</blockquote>
+<p>使用移动命令选中</p>
+<h4 id="计数使用">计数使用</h4>
+<p>所有你需要用鼠标做的事， 你现在都可以用键盘：采用编辑命令和移动命令的组合来完成。 这就是 Vim 的界面开始看起来像一个程序语言的时候。Vim 的编辑命令也被称为 <strong>“动词”</strong>， 因为动词可以施动于名词。下面是一些例子，通过结合使用，来指定操作多次。</p>
+<blockquote>
+<p><code>3w</code> 向前移动三个词
+<code>5j</code> 向下移动5行
+<code>7dw</code> 删除7个词</p>
+</blockquote>
+<h4 id="使用修饰语">使用修饰语</h4>
+<p>你可以用修饰语改变“名词”的意义。
+修饰语有 <code>i</code>，表示**“内部”<strong>或者</strong>“在内”<strong>，和 <code>a</code>， 表示</strong>“周围”**。</p>
+<blockquote>
+<p><code>ci(</code> 改变当前括号内的内容
+<code>ci[</code> 改变当前方括号内的内容
+<code>da'</code> 删除一个单引号字符串， 包括周围的单引号</p>
+</blockquote>
+<h4 id="进阶操作搜索与替换">进阶操作：搜索与替换</h4>
+<p><code>:s</code> （替换）命令（<a href="https://vim.fandom.com/wiki/Search_and_replace"target="_blank" rel="external nofollow noopener noreferrer">文档</a>）。</p>
+<blockquote>
+<p><code>%s/foo/bar/g</code> 	在整个文件中将 foo 全局替换成 bar
+<code>%s/[._]((._))/\1/g</code> 	将有命名的 Markdown 链接替换成简单 URLs</p>
+</blockquote>
+<h4 id="进阶操作多窗口">进阶操作：多窗口</h4>
+<blockquote>
+<p>用 <code>:sp</code>/<code>:vsp</code> 来分割窗口
+同一个缓存可以在多个窗口中显示。</p>
+</blockquote>
+<h4 id="进阶操作宏">进阶操作：宏</h4>
+<blockquote>
+<p><code>q{字符}</code> 	来开始在寄存器<code>{字符}</code>中录制宏
+<code>q</code> 	停止录制
+<code>@{字符}</code> 	重放宏，宏的执行遇错误会停止
+<code>{计数}@{字符}</code> 执行一个宏{计数}次
+<code>@@</code>	重复上一个宏</p>
+</blockquote>
+<h2 id="配置文件与扩展插件">配置文件与扩展插件</h2>
+<h3 id="自定义你的-vim--从配置文件开始">自定义你的 Vim —— 从配置文件开始</h3>
+<p>Vim 由一个位于 <code>~/.vimrc</code> 的文本配置文件，如果没有就新建一个即可。Vim 能够被重度自定义，花时间探索自定义选项是值得的。可以参考其他人的在 GitHub 上共享的配置文件。例如下面是三位授课人的配置文件，但尽量在阅读后加入自己用的到的部分。不要直接复制。</p>
+<blockquote>
+<p><a href="https://github.com/anishathalye/dotfiles/blob/master/vimrc"target="_blank" rel="external nofollow noopener noreferrer">Anish</a> 的配置文件
+<a href="https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim"target="_blank" rel="external nofollow noopener noreferrer">Jon</a> (uses <a href="https://neovim.io/"target="_blank" rel="external nofollow noopener noreferrer">neovim</a>) 的配置文件
+<a href="https://github.com/JJGO/dotfiles/blob/master/vim/.vimrc"target="_blank" rel="external nofollow noopener noreferrer">Jose</a> 的配置文件</p>
+</blockquote>
+<p>下面提供一个文档详细的基本设置，你可以用它当作你的初始设置。我们推荐使用这个设置因为它修复了一些 Vim 默认设置奇怪行为。将其复制粘贴保存为 <code>~/.vimrc</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="s2">&#34; Vimscript 中的注释以 `&#34;</span><span class="o">`</span><span class="w"> </span><span class="err">开头。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s2">&#34; 如果您在 Vim 中打开此文件，它将为您突出显示语法。
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="w"> </span><span class="n">Vim</span><span class="w"> </span><span class="err">是基于</span><span class="w"> </span><span class="n">Vi</span><span class="w"> </span><span class="err">的。设置</span><span class="w"> </span><span class="o">`</span><span class="n">noknown</span><span class="o">`</span><span class="w"> </span><span class="err">会切换默认的</span><span class="w"> </span><span class="n">Vi</span><span class="w"> </span><span class="err">兼容模式并启用有用的</span><span class="w"> </span><span class="n">Vim</span><span class="w"> </span><span class="err">功能。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s2">&#34; 对于名为 &#39;~/.vimrc&#39; 的文件来说，这个配置选项不是必需的，因为 Vim 会自动输入 noknown
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="w"> </span><span class="err">如果该文件存在，则我们将其包含在此处，以防万一该配置文件以其他方式加载</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s2">&#34; （例如保存为 `foo`，然后 Vim 以 `vim -u foo` 启动）。
+</span></span></span><span class="line"><span class="cl"><span class="s2">set nocompatible
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="w"> </span><span class="err">打开语法高亮。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">syntax</span><span class="w"> </span><span class="k">on</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s2">&#34; 禁用默认的 Vim 启动消息。
+</span></span></span><span class="line"><span class="cl"><span class="s2">set shortmess+=I
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="w"> </span><span class="err">显示行号。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">set</span><span class="w"> </span><span class="n">number</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s2">&#34; 这将启用相对行编号模式。同时启用 number 和relativenumber 后，当前行显示真实行号，
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="w"> </span><span class="err">而所有其他行（上方和下方）均相对于当前行进行编号。这很有用，因为您可以知道，</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s2">&#34; 一目了然，需要多少次才能向上或向下跳转到特定行，通过 {count}k 向上或通过 {count}j 向下。
+</span></span></span><span class="line"><span class="cl"><span class="s2">set relativenumber
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="w"> </span><span class="err">即使只打开一个窗口，也始终在底部显示状态行。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">set</span><span class="w"> </span><span class="n">laststatus</span><span class="o">=</span><span class="mi">2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s2">&#34; 默认情况下，退格键的行为有点不直观。
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="w"> </span><span class="err">例如，默认情况下，您无法在用“</span><span class="n">i</span><span class="err">”设置的插入点之前退格。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s2">&#34; 此配置使退格键的行为更加合理，因为您可以在任何东西上退格。
+</span></span></span><span class="line"><span class="cl"><span class="s2">set backspace=indent,eol,start
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="w"> </span><span class="err">默认情况下，</span><span class="n">Vim</span><span class="w"> </span><span class="err">不允许您隐藏具有未保存更改的缓冲区（即具有未在任何窗口中显示的缓冲区）。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s2">&#34; 这是为了防止您 &#34;</span><span class="w"> </span><span class="err">忘记未保存的更改然后退出，例如</span><span class="w"> </span><span class="err">通过</span><span class="o">`</span><span class="p">:</span><span class="n">qa</span><span class="o">!`</span><span class="err">。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s2">&#34; 我们发现隐藏缓冲区足以帮助禁用此保护。 有关详细信息，请参阅“:helphidden”。
+</span></span></span><span class="line"><span class="cl"><span class="s2">set hidden
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="w"> </span><span class="err">当要搜索的字符串中的所有字符均为小写时，此设置使搜索不区分大小写。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s2">&#34; 但是，如果包含任何大写字母，则搜索将区分大小写。这使搜索更加方便。
+</span></span></span><span class="line"><span class="cl"><span class="s2">set ignorecase
+</span></span></span><span class="line"><span class="cl"><span class="s2">set smartcase
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="w"> </span><span class="err">在键入时启用搜索，而不是等到按</span><span class="w"> </span><span class="n">Enter</span><span class="w"> </span><span class="err">键。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">set</span><span class="w"> </span><span class="n">incsearch</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s2">&#34; 取消绑定一些无用/烦人的默认按键绑定。
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="w"> </span><span class="s1">&#39;Q&#39;</span><span class="w"> </span><span class="err">在正常模式下进入</span><span class="w"> </span><span class="n">Ex</span><span class="w"> </span><span class="err">模式。你几乎永远不会想要这个。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">nmap</span><span class="w"> </span><span class="n">Q</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Nop</span><span class="o">&gt;</span><span class="w"> </span><span class="s2">&#34; &#39;Q&#39; in normal mode enters Ex mode. You almost never want this.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="w"> </span><span class="err">禁用声音铃声，因为它很烦人。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">set</span><span class="w"> </span><span class="n">noerrorbells</span><span class="w"> </span><span class="n">visualbell</span><span class="w"> </span><span class="n">t_vb</span><span class="o">=</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s2">&#34; 启用鼠标支持。您应该避免过度依赖它，但有时它很方便。
+</span></span></span><span class="line"><span class="cl"><span class="s2">set mouse+=a
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="w"> </span><span class="err">尽量避免使用方向键进行移动等坏习惯。这并不是唯一可能的坏习惯。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s2">&#34; 例如，按住 h/j/k/l 键进行移动，而不是使用更高效的移动命令，也是一种可能的坏习惯。
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="w"> </span><span class="err">前者可以通过</span><span class="w"> </span><span class="p">.</span><span class="n">vimrc</span><span class="w"> </span><span class="err">强制执行，而我们不知道如何防止后者。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="s2">&#34; 在正常模式下执行此操作...
+</span></span></span><span class="line"><span class="cl"><span class="s2">nnoremap &lt;Left&gt;  :echoe &#34;</span><span class="k">Use</span><span class="w"> </span><span class="n">h</span><span class="s2">&#34;&lt;CR&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s2">nnoremap &lt;Right&gt; :echoe &#34;</span><span class="k">Use</span><span class="w"> </span><span class="n">l</span><span class="s2">&#34;&lt;CR&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s2">nnoremap &lt;Up&gt;    :echoe &#34;</span><span class="k">Use</span><span class="w"> </span><span class="n">k</span><span class="s2">&#34;&lt;CR&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s2">nnoremap &lt;Down&gt;  :echoe &#34;</span><span class="k">Use</span><span class="w"> </span><span class="n">j</span><span class="s2">&#34;&lt;CR&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="w"> </span><span class="p">...</span><span class="err">并在插入模式下执行此操作</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">inoremap</span><span class="w"> </span><span class="o">&lt;</span><span class="k">Left</span><span class="o">&gt;</span><span class="w">  </span><span class="o">&lt;</span><span class="n">ESC</span><span class="o">&gt;</span><span class="p">:</span><span class="n">echoe</span><span class="w"> </span><span class="s2">&#34;Use h&#34;</span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">inoremap</span><span class="w"> </span><span class="o">&lt;</span><span class="k">Right</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">ESC</span><span class="o">&gt;</span><span class="p">:</span><span class="n">echoe</span><span class="w"> </span><span class="s2">&#34;Use l&#34;</span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">inoremap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Up</span><span class="o">&gt;</span><span class="w">    </span><span class="o">&lt;</span><span class="n">ESC</span><span class="o">&gt;</span><span class="p">:</span><span class="n">echoe</span><span class="w"> </span><span class="s2">&#34;Use k&#34;</span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">inoremap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Down</span><span class="o">&gt;</span><span class="w">  </span><span class="o">&lt;</span><span class="n">ESC</span><span class="o">&gt;</span><span class="p">:</span><span class="n">echoe</span><span class="w"> </span><span class="s2">&#34;Use j&#34;</span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="扩展你的-vim--插件的使用">扩展你的 Vim —— 插件的使用</h3>
+<p>Vim 从 8.0 开始有了内置的插件管理器。只需要创建一个 <code>~/.vim/pack/vendor/start/</code> 的文件夹，然后把插件放到这里即可。至于插件的选择，可以到 Vim Awesome 去浏览并尝试一下。</p>
+<blockquote>
+<p><a href="https://vimawesome.com/"target="_blank" rel="external nofollow noopener noreferrer">Vim Awesome</a></p>
+</blockquote>
+<p>同时，授课讲师们也推荐了一些插件：</p>
+<blockquote>
+<p><a href="https://github.com/ctrlpvim/ctrlp.vim"target="_blank" rel="external nofollow noopener noreferrer">ctrlp.vim</a>	模糊文件查找
+<a href="https://github.com/mileszs/ack.vim"target="_blank" rel="external nofollow noopener noreferrer">ack.vim</a>	代码搜索
+<a href="https://github.com/scrooloose/nerdtree"target="_blank" rel="external nofollow noopener noreferrer">nerdtree</a>	文件浏览器
+<a href="https://github.com/easymotion/vim-easymotion"target="_blank" rel="external nofollow noopener noreferrer">vim-easymotion</a>	魔术操作</p>
+</blockquote>
+<p>或者去网路上查找一些博客、文章、回答，关键词是 &ldquo;best Vim plugins&rdquo;，当然之前去大佬的配置文件中看看也不失为一个好办法。</p>
+<h3 id="万物皆可-vim--其他程式的-vim-模式">万物皆可 Vim —— 其他程式的 Vim 模式</h3>
+<h4 id="shell">Shell</h4>
+<blockquote>
+<p>Bash 用户，用 <code>set -o vi</code>。
+Zsh：<code>bindkey -v</code>。
+Fish 用 <code>fish_vi_key_bindings</code>。</p>
+</blockquote>
+<p>另外，不管利用什么 shell，你可以 <code>export EDITOR=vim</code>。 这是一个用来决定当一个程序需要启动编辑时启动哪个的环境变量。 例如，git 会使用这个编辑器来编辑 commit 信息。</p>
+<h4 id="浏览器">浏览器</h4>
+<p>甚至有 Vim 的网页浏览快捷键 <a href="http://vim.wikia.com/wiki/Vim_key_bindings_for_web_browsers"target="_blank" rel="external nofollow noopener noreferrer">browsers</a></p>
+<blockquote>
+<p>Google Chrome 的 <a href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en"target="_blank" rel="external nofollow noopener noreferrer">Vimium</a>
+Firefox 的 <a href="https://github.com/tridactyl/tridactyl"target="_blank" rel="external nofollow noopener noreferrer">Tridactyl</a></p>
+</blockquote>
+<p><a href="https://reversed.top/2016-08-13/big-list-of-vim-like-software"target="_blank" rel="external nofollow noopener noreferrer">这个列表</a> 中列举了支持类 vim 键位绑定的软件</p>
+<h2 id="扩展资料">扩展资料</h2>
+<blockquote>
+<p><code>vimtutor</code> 是一个 Vim 安装时自带的教程
+<a href="https://vim-adventures.com/"target="_blank" rel="external nofollow noopener noreferrer">Vim Adventures</a> 是一个学习使用 Vim 的游戏
+<a href="http://vim.wikia.com/wiki/Vim_Tips_Wiki"target="_blank" rel="external nofollow noopener noreferrer">Vim Tips Wiki</a>
+<a href="https://vimways.org/2019/"target="_blank" rel="external nofollow noopener noreferrer">Vim Advent Calendar</a> 有很多 Vim 小技巧
+<a href="http://www.vimgolf.com/"target="_blank" rel="external nofollow noopener noreferrer">Vim Golf</a> 是用 Vim 的用户界面作为程序语言的 <a href="https://en.wikipedia.org/wiki/Code_golf"target="_blank" rel="external nofollow noopener noreferrer">code golf</a>
+<a href="https://vi.stackexchange.com/"target="_blank" rel="external nofollow noopener noreferrer">Vi/Vim Stack Exchange</a>
+<a href="http://vimcasts.org/"target="_blank" rel="external nofollow noopener noreferrer">Vim Screencasts</a>
+<a href="https://pragprog.com/titles/dnvim2/"target="_blank" rel="external nofollow noopener noreferrer">Practical Vim</a>（书籍）</p>
+</blockquote>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-07-04 20:04:57">更新于 2023-07-04&nbsp;</span>
+      </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/%E5%AD%A6%E4%B9%A0/' class="post-tag">学习</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/mi9%E5%88%B7%E6%9C%BA%E6%8C%87%E5%8C%97/" class="post-nav-item" rel="prev" title="MI9 Pixel Experience &#43; Magisk"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>MI9 Pixel Experience &#43; Magisk</a></div>
+</div>
+<div id="comments"><div id="utterances" class="comment"></div><noscript>
+        Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/" rel="external nofollow noopener noreferrer">Utterances</a>.
+      </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line statistics"><span class="site-time" title='网站运行中……'><i class=" fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">运行时间</span><span class="run-times ms-1">网站运行中……</span></span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/instant-page/instantpage.min.js" async defer type="module"></script><script src="/lib/typeit/index.umd.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="/lib/cell-watermark/watermark.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":true,"expired":false,"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"PurpleRed-River/hugo-blog-comment"}},"data":{"typeit-header-subtitle-desktop":"PurpleRed-River's Blog","typeit-header-subtitle-mobile":"PurpleRed-River's Blog"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"pangu":{"enable":true,"selector":"article"},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":true},"siteTime":"2022-07-10T23:00:00+08:00","typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"typeit-header-subtitle-desktop":["typeit-header-subtitle-desktop"],"typeit-header-subtitle-mobile":["typeit-header-subtitle-mobile"]},"duration":-1,"loop":false,"speed":100},"watermark":{"appendto":".wrapper\u003emain","colspacing":30,"content":".","enable":true,"fontfamily":"inherit","fontsize":0.85,"height":20,"opacity":0.1,"rotate":15,"rowspacing":60,"width":150}};</script><script src="/js/theme.min.js" defer></script></body>
+</html>
